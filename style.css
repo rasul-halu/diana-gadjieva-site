@@ -54,8 +54,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 36px; }
 .hero__actions .button { flex: 1 1 0; padding-inline: 16px; }
 .hero__photo { display: grid; place-items: center; position: relative; aspect-ratio: 300 / 368; background: #e5e1de; overflow: hidden; }
-.hero__photo-placeholder { color: var(--muted); font-size: 16px; line-height: 1.5; letter-spacing: .08em; text-align: center; }
-.hero__photo img { display: block; width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.hero__photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; position: absolute; inset: 0; }
 
 /* Section headings */
 .section__eyebrow { margin-bottom: 10px; font-size: 14px; line-height: 1.4; letter-spacing: .2em; color: var(--muted); }
@@ -79,13 +78,20 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .price-subgroup h4 { margin-bottom: 6px; color: var(--accent); font-size: 16px; line-height: 1.4; font-weight: 500; }
 .price-list--separate { margin-top: 26px; padding-top: 26px; border-top: 1px solid var(--line); }
 
+/* Supporting details use the same quiet price-list typography. */
+.price-description { margin: -4px 0 18px; color: var(--muted); font-size: .95rem; line-height: 1.5; }
+.price-annotation { margin-top: 16px; color: var(--muted); font-size: .875rem; line-height: 1.6; }
+.training__subtitle { margin-bottom: 22px; color: var(--accent); font-size: 1rem; line-height: 1.5; }
+.training__list .price-row { padding-block: 18px; }
+.training__list .price-note { margin-top: 4px; }
+@media (min-width: 1101px) {
+  .price-description { font-size: 19px; }
+  .price-annotation { font-size: 17px; }
+  .training__subtitle { font-size: 22px; }
+}
 /* Training */
 .training { background: var(--section-alt); padding-block: 42px 54px; }
 .training .section__heading { margin-bottom: 28px; }
-.training__placeholder { min-height: 124px; display: flex; align-items: center; border: 1px solid var(--line); padding: 26px 38px; gap: 64px; }
-.training__icon { display: flex; align-items: center; justify-content: flex-start; padding-right: 64px; border-right: 1px solid #bdb6b2; color: #999590; }
-.training__icon .icon { width: 60px; height: 60px; }
-.training__placeholder p { color: #64605d; font-size: 19px; line-height: 1.5; }
 
 /* Contacts */
 .contacts { padding-block: 40px 76px; }
@@ -116,8 +122,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .price-subgroup h4 { font-size: 22px; }
   .price-subgroup { padding-top: 30px; margin-top: 30px; }
   .price-list--separate { padding-top: 34px; margin-top: 30px; }
-  .training__placeholder { min-height: 156px; }
-  .training__placeholder p { font-size: 24px; }
   .contacts .section__heading h2 { font-size: 94px; }
   .contacts__actions .button { min-height: 74px; font-size: 21px; }
 }
@@ -178,7 +182,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .hero__actions { margin-top: 26px; gap: 12px; }
   .hero__actions .button { min-height: 50px; padding-inline: 12px; font-size: 15px; }
   .hero__photo { width: 100%; max-height: 600px; }
-  .hero__photo-placeholder { font-size: 14px; }
   .section__eyebrow { font-size: 11px; margin-bottom: 10px; }
   .section__heading { gap: 22px; margin-bottom: 30px; }
   .section__heading h2 { font-size: 60px; }
@@ -193,10 +196,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .price-subgroup { margin-top: 20px; padding-top: 20px; }
   .price-subgroup h4 { font-size: 14px; }
   .price-list--separate { margin-top: 20px; padding-top: 20px; }
-  .training__placeholder { min-height: 122px; padding: 22px 20px; gap: 20px; }
-  .training__icon { padding-right: 20px; }
-  .training__icon .icon { width: 42px; height: 42px; }
-  .training__placeholder p { font-size: 16px; }
   .contacts { padding-bottom: 44px; }
   .contacts .section__heading { gap: 16px; }
   .contacts .section__heading h2 { font-size: clamp(42px, 7.5vw, 60px); }
@@ -213,8 +212,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .hero__actions .button { font-size: 14px; gap: 8px; padding-inline: 8px; }
   .price-row { column-gap: 8px; font-size: 14px; }
   .price-group h3 { font-size: 27px; }
-  .training__placeholder { gap: 14px; padding-inline: 14px; }
-  .training__icon { padding-right: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
